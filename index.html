@@ -66,7 +66,7 @@
   .pill.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);color:#eafff0;}
   .hero h1{font-size:clamp(32px,7vw,54px);line-height:1.05;margin-bottom:14px;}
   .hero h1 em{font-style:normal;color:var(--green-bright);}
-  .hero p.lead{font-size:17px;color:#d6ead9;max-width:520px;margin-bottom:26px;}
+  .hero p.lead{font-size:17px;color:#d6ead9;max-width:520px;margin-bottom:26px;background:transparent;}
   .check-list{display:grid;gap:10px;margin-bottom:30px;}
   .check-list li{list-style:none;display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#eafff2;}
   .check-list li:before{
@@ -106,6 +106,11 @@
   .how{background:linear-gradient(160deg,#0f7a35,#0b3d1f);color:#fff;}
   .how .section-head p{color:#cfead9;}
   .how .section-head h2{color:#fff;}
+  .diagram-wrap{
+    background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;
+    padding:18px 10px 6px;margin-bottom:28px;overflow-x:auto;
+  }
+  .diagram-wrap svg{display:block;width:100%;height:auto;min-width:560px;}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:10px;}
   .step{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:14px;padding:22px;}
   .step-num{font-size:12px;font-weight:800;color:var(--green-bright);letter-spacing:.1em;}
@@ -246,6 +251,56 @@
       <h2>Energia solar chega até você sem sair de casa</h2>
       <p>A energia é gerada em fazendas solares e injetada direto na rede da distribuidora, chegando normalmente até a sua casa ou empresa.</p>
     </div>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração mostrando energia solar sendo produzida, injetada na rede e distribuída até residências e comércios">
+        <!-- ground line -->
+        <line x1="10" y1="185" x2="690" y2="185" stroke="#2f6b45" stroke-width="2"/>
+
+        <!-- SOLAR FARM -->
+        <g transform="translate(30,90)">
+          <rect x="0" y="30" width="46" height="30" rx="3" fill="#134a26" stroke="#22c55e" stroke-width="1.5" transform="skewX(-18)"/>
+          <rect x="42" y="20" width="46" height="30" rx="3" fill="#134a26" stroke="#22c55e" stroke-width="1.5" transform="skewX(-18)"/>
+          <rect x="84" y="10" width="46" height="30" rx="3" fill="#134a26" stroke="#22c55e" stroke-width="1.5" transform="skewX(-18)"/>
+          <line x1="0" y1="60" x2="0" y2="95" stroke="#22c55e" stroke-width="3"/>
+          <line x1="90" y1="40" x2="90" y2="95" stroke="#22c55e" stroke-width="3"/>
+          <circle cx="150" cy="-20" r="16" fill="#f2622e" opacity="0.9"/>
+          <line x1="150" y1="-46" x2="150" y2="-40" stroke="#f2622e" stroke-width="3"/>
+          <line x1="150" y1="6" x2="150" y2="12" stroke="#f2622e" stroke-width="3"/>
+          <line x1="124" y1="-20" x2="118" y2="-20" stroke="#f2622e" stroke-width="3"/>
+          <line x1="176" y1="-20" x2="182" y2="-20" stroke="#f2622e" stroke-width="3"/>
+        </g>
+        <text x="70" y="205" fill="#cfead9" font-size="12" font-family="Segoe UI, sans-serif" text-anchor="middle" font-weight="700">PRODUÇÃO</text>
+
+        <!-- transmission towers -->
+        <g stroke="#8fc9a1" stroke-width="2" fill="none">
+          <path d="M280 185 L295 95 L310 185 M285 130 L305 130 M282 155 L308 155"/>
+          <path d="M420 185 L435 85 L450 185 M425 120 L445 120 M422 150 L448 150"/>
+        </g>
+        <path d="M170 100 Q 230 60 295 95" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+        <path d="M310 95 Q 370 60 435 85" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+        <text x="360" y="205" fill="#cfead9" font-size="12" font-family="Segoe UI, sans-serif" text-anchor="middle" font-weight="700">INJEÇÃO E DISTRIBUIÇÃO</text>
+
+        <!-- house -->
+        <g transform="translate(540,120)">
+          <polygon points="0,40 40,10 80,40" fill="#22c55e"/>
+          <rect x="8" y="40" width="64" height="45" fill="#f4efe2"/>
+          <rect x="20" y="55" width="16" height="16" fill="#0b3d1f"/>
+          <rect x="46" y="55" width="16" height="30" fill="#0b3d1f"/>
+        </g>
+        <!-- building -->
+        <g transform="translate(630,80)">
+          <rect x="0" y="0" width="46" height="85" fill="#134a26" stroke="#22c55e" stroke-width="1.5"/>
+          <rect x="8" y="10" width="10" height="10" fill="#22c55e" opacity=".6"/>
+          <rect x="26" y="10" width="10" height="10" fill="#22c55e" opacity=".6"/>
+          <rect x="8" y="28" width="10" height="10" fill="#22c55e" opacity=".6"/>
+          <rect x="26" y="28" width="10" height="10" fill="#22c55e" opacity=".6"/>
+          <rect x="8" y="46" width="10" height="10" fill="#22c55e" opacity=".6"/>
+          <rect x="26" y="46" width="10" height="10" fill="#22c55e" opacity=".6"/>
+        </g>
+        <path d="M450 100 Q 500 70 545 100" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+        <text x="620" y="205" fill="#cfead9" font-size="12" font-family="Segoe UI, sans-serif" text-anchor="middle" font-weight="700">SUA CASA</text>
+      </svg>
+    </div>
     <div class="steps">
       <div class="step">
         <div class="step-num">PRODUÇÃO</div>
@@ -381,4 +436,3 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
 
 </body>
 </html>
- 
